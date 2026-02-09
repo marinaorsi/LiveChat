@@ -1,0 +1,5 @@
+{
+  "name": "LiveChat",
+  "description": "A high-fidelity clone of the requested live chat widget with webhook integration capabilities.",
+  "requestFramePermissions": []
+}
