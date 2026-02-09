@@ -55,9 +55,9 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full w-full bg-[#0c0c0c] z-20 animate-in fade-in duration-300">
-      {/* Header interno della Chat */}
-      <div className="px-4 py-4 flex items-center justify-between border-b border-white/5 bg-[#0c0c0c]">
+    <div className="absolute inset-0 flex flex-col h-full w-full bg-[#0c0c0c] z-20">
+      {/* Header Chat */}
+      <div className="px-4 py-4 flex items-center justify-between border-b border-white/5 bg-[#0c0c0c] flex-shrink-0">
         <button onClick={onBack} className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center text-white transition-all">
           <Icons.ArrowLeft className="w-5 h-5" />
         </button>
@@ -72,8 +72,8 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
         </button>
       </div>
 
-      {/* Area Messaggi - scrollabile */}
-      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-6 scrollbar-hide">
+      {/* Area Messaggi */}
+      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-6 scrollbar-hide bg-[#0c0c0c]">
         {messages.map((msg) => (
           <div key={msg.id} className={`flex items-start gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
             {msg.sender === 'agent' && (
@@ -101,8 +101,8 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Area Input */}
-      <div className="p-4 pb-6 bg-[#0c0c0c]">
+      {/* Input Area */}
+      <div className="p-4 pb-6 bg-[#0c0c0c] flex-shrink-0">
         <div className="bg-[#1a1a1a] rounded-full flex items-center p-1.5 border border-white/5 shadow-xl">
           <input
             value={inputValue}
