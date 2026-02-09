@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Icons } from './icons';
 import { ViewState, Message } from '../types';
@@ -67,9 +66,9 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
             )}
           </div>
 
-          {/* Footer di navigazione - Rimosso il selettore grigio di sfondo */}
+          {/* Footer di navigazione - Il pulsante Contatto ora rimanda direttamente alla Chat */}
           <div className="relative z-10 px-6 pb-6 pt-2 bg-[#0c0c0c] flex-shrink-0">
-            <div className="bg-[#1a1a1a] rounded-[24px] p-1 flex border border-white/5">
+            <div className="bg-[#1a1a1a] rounded-[24px] p-1 flex border border-white/5 shadow-inner">
               <button 
                 onClick={() => setActiveView(ViewState.HOME)} 
                 className="flex-1 flex flex-col items-center justify-center py-2 rounded-[20px] transition-all duration-200 group"
@@ -79,11 +78,11 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
               </button>
               
               <button 
-                onClick={() => setActiveView(ViewState.CONTACT)} 
-                className="flex-1 flex flex-col items-center justify-center py-2 rounded-[20px] transition-all duration-200 group"
+                onClick={() => setActiveView(ViewState.CHAT)} 
+                className="flex-1 flex flex-col items-center justify-center py-2 rounded-[20px] transition-all duration-200 group border-[1.5px] border-transparent active:border-white/10"
               >
-                <Icons.MessageCircle className={`w-6 h-6 mb-0.5 ${activeView === ViewState.CONTACT ? 'text-white' : 'text-white/40 group-hover:text-white'}`} />
-                <span className={`text-[12px] font-medium ${activeView === ViewState.CONTACT ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>Contatto</span>
+                <Icons.MessageCircle className="w-6 h-6 mb-0.5 text-white/40 group-hover:text-white" />
+                <span className="text-[12px] font-medium text-white/40 group-hover:text-white">Contatto</span>
               </button>
             </div>
           </div>
