@@ -42,7 +42,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
           sessionId={sessionId}
         />
       ) : (
-        /* Vista Home/Contatto con Header e Footer */
+        /* Vista Home o Contact con Header e Footer */
         <div className="flex flex-col h-full w-full relative">
           {/* Header con gradiente */}
           <div className="absolute top-0 left-0 w-full h-[380px] bg-gradient-to-b from-[#4d4018] to-[#0c0c0c] pointer-events-none z-0" />
@@ -67,23 +67,23 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({
             )}
           </div>
 
-          {/* Footer di navigazione */}
+          {/* Footer di navigazione - Rimosso il selettore grigio di sfondo */}
           <div className="relative z-10 px-6 pb-6 pt-2 bg-[#0c0c0c] flex-shrink-0">
-            <div className="bg-[#1a1a1a] rounded-[24px] p-1 flex border border-white/5 shadow-inner">
+            <div className="bg-[#1a1a1a] rounded-[24px] p-1 flex border border-white/5">
               <button 
                 onClick={() => setActiveView(ViewState.HOME)} 
-                className={`flex-1 flex flex-col items-center justify-center py-3 rounded-[20px] transition-all duration-200 group ${activeView === ViewState.HOME ? 'bg-white/5' : ''}`}
+                className="flex-1 flex flex-col items-center justify-center py-2 rounded-[20px] transition-all duration-200 group"
               >
-                <Icons.Home className={`w-7 h-7 mb-1 ${activeView === ViewState.HOME ? 'text-white' : 'text-white/40 group-hover:text-white'}`} />
-                <span className={`text-[11px] font-medium ${activeView === ViewState.HOME ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>Home</span>
+                <Icons.Home className={`w-6 h-6 mb-0.5 ${activeView === ViewState.HOME ? 'text-white' : 'text-white/40 group-hover:text-white'}`} />
+                <span className={`text-[12px] font-medium ${activeView === ViewState.HOME ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>Home</span>
               </button>
               
               <button 
-                onClick={() => setActiveView(ViewState.CHAT)} 
-                className={`flex-1 flex flex-col items-center justify-center py-3 rounded-[20px] transition-all duration-200 group ${activeView === ViewState.CONTACT ? 'bg-white/5' : ''}`}
+                onClick={() => setActiveView(ViewState.CONTACT)} 
+                className="flex-1 flex flex-col items-center justify-center py-2 rounded-[20px] transition-all duration-200 group"
               >
-                <Icons.MessageCircle className={`w-7 h-7 mb-1 ${activeView === ViewState.CONTACT ? 'text-white' : 'text-white/40 group-hover:text-white'}`} />
-                <span className={`text-[11px] font-medium ${activeView === ViewState.CONTACT ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>Contatto</span>
+                <Icons.MessageCircle className={`w-6 h-6 mb-0.5 ${activeView === ViewState.CONTACT ? 'text-white' : 'text-white/40 group-hover:text-white'}`} />
+                <span className={`text-[12px] font-medium ${activeView === ViewState.CONTACT ? 'text-white' : 'text-white/40 group-hover:text-white'}`}>Contatto</span>
               </button>
             </div>
           </div>
