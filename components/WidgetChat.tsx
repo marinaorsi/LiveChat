@@ -55,7 +55,7 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full w-full bg-[#0c0c0c] absolute inset-0 z-20 animate-in fade-in duration-300">
+    <div className="flex flex-col h-full w-full bg-[#0c0c0c] z-20 animate-in fade-in duration-300">
       {/* Header interno della Chat */}
       <div className="px-4 py-4 flex items-center justify-between border-b border-white/5 bg-[#0c0c0c]">
         <button onClick={onBack} className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center text-white transition-all">
@@ -72,7 +72,7 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
         </button>
       </div>
 
-      {/* Area Messaggi flessibile */}
+      {/* Area Messaggi - scrollabile */}
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-6 scrollbar-hide">
         {messages.map((msg) => (
           <div key={msg.id} className={`flex items-start gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -101,7 +101,7 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Area */}
+      {/* Area Input */}
       <div className="p-4 pb-6 bg-[#0c0c0c]">
         <div className="bg-[#1a1a1a] rounded-full flex items-center p-1.5 border border-white/5 shadow-xl">
           <input
