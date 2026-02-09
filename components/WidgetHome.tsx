@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Icons } from './icons';
 import { ViewState } from '../types';
@@ -34,7 +35,7 @@ export const WidgetHome: React.FC<WidgetHomeProps> = ({ onChangeView }) => {
           href="https://markour.co/#section-mmQWgCRnn3" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-between p-4 rounded-xl group"
+          className="w-full flex items-center justify-between py-2.5 px-4 rounded-xl group"
         >
           <span className="text-white text-[14px]">Pacchetti e prezzi</span>
           <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#EFCF45] transition-colors">
