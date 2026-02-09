@@ -26,7 +26,6 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Scroll automatico all'ultimo messaggio
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isTyping]);
@@ -41,7 +40,6 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
       timestamp: Date.now() 
     };
     
-    // Aggiorna lo stato globale dei messaggi
     setMessages(prev => [...prev, userMsg]);
     setInputValue('');
     setIsTyping(true);
@@ -58,8 +56,8 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
 
   return (
     <div className="flex flex-col h-full bg-[#0c0c0c]">
-      {/* Header della Chat */}
-      <div className="px-4 py-4 flex items-center justify-between z-10 border-b border-white/5">
+      {/* Header fedele allo screenshot */}
+      <div className="px-4 py-4 flex items-center justify-between z-10">
         <button onClick={onBack} className="w-10 h-10 rounded-full bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center text-white transition-all">
           <Icons.ArrowLeft className="w-5 h-5" />
         </button>
@@ -74,8 +72,8 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
         </button>
       </div>
 
-      {/* Area Messaggi - Persistente */}
-      <div className="flex-1 overflow-y-auto px-4 py-4 space-y-6 scrollbar-hide bg-[#0c0c0c]">
+      {/* Area Messaggi */}
+      <div className="flex-1 overflow-y-auto px-4 py-2 space-y-6 scrollbar-hide">
         {messages.map((msg) => (
           <div key={msg.id} className={`flex items-start gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
             {msg.sender === 'agent' && (
@@ -103,8 +101,8 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Area Input */}
-      <div className="p-4 pb-6 bg-[#0c0c0c]">
+      {/* Input Area fedele allo screenshot */}
+      <div className="p-4 pb-6">
         <div className="bg-[#1a1a1a] rounded-full flex items-center p-1.5 border border-white/5 shadow-xl">
           <input
             value={inputValue}
@@ -117,7 +115,7 @@ export const WidgetChat: React.FC<WidgetChatProps> = ({
             onClick={handleSend} 
             disabled={!inputValue.trim()}
             className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
-              inputValue.trim() ? 'bg-[#facc15] text-black hover:bg-[#eab308]' : 'bg-[#222222] text-gray-600'
+              inputValue.trim() ? 'bg-[#333333] text-white hover:bg-[#444444]' : 'bg-[#222222] text-gray-600'
             }`}
           >
             <Icons.ArrowUp className="w-5 h-5" />
